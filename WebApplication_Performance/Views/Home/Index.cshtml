@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Item>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h1>Welcome to the Library Application</h1>
+
+<p>
+    <b>Cached Books List retrieved at @@ @DateTime.Now.ToString()</b>
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(Model => Model.Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(Model => Model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Author)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ISBN)
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Author)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ISBN)
+            </td>
+        </tr>
+    }
+</table>
+
+<p>
+    Books Count: @ViewBag.BookCount
+</p>
+<p>
+    Current Date and Time: @ViewBag.CurrentTime
+</p>
+
+<button id="myButton">Click Me</button>
+
+<form onsubmit="return validateForm()">
+    <input id="myInput" type="text" placeholder="Enter something..." />
+    <button type="submit">Submit</button>
+</form>
+
+<button onclick="toggleDarkMode()">Toggle Dark Mode</button>
