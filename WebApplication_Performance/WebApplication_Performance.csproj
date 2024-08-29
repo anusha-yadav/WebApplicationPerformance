@@ -21,4 +21,8 @@
   <ItemGroup>
     <ProjectReference Include="..\WebApplicationPerformance.Data\WebApplicationPerformance.Data.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Images\" />
+  </ItemGroup>
 </Project>
